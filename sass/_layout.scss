@@ -1,0 +1,98 @@
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark);
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest){
+        margin: 0;
+        width: 100%; 
+        max-width: 100%;
+    }
+}
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: 1px solid var(--color-grey-light-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest){
+        flex-wrap: wrap; // If there isn't enought space in a line, one or more elements will move in onother one;
+        height: 11em;
+        align-content: space-around; // it's a row propriety
+    }
+}
+.content{
+    display: flex;
+    @media only screen and (max-width: $bp-medium){
+        flex-direction: column;
+     }
+}
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%;  
+    //grow - sa creasca daca este spatiu pana la urmatorul element 
+    //shrink  - sa se micsoreze daca nu este destul spatiu 
+    //bases - lungime din totalul de containerului.
+    //este un fel de pozitie fixa a elementului
+
+    // Cond folosim %  grow/shrink setam 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hotel-view {
+    flex: 1;
+    // flex:1; ii perrmitem itemului sa creasca atat cit este spatiu
+}
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--border-bottom);
+    font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-medium){
+        justify-content: center;
+        padding: 3rem;
+     }
+
+     @media only screen and (max-width: $bp-small){
+        flex-direction: column;
+     }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium){
+        justify-content: center;
+        padding: 2rem;
+        margin-right: 3rem;
+
+     }
+     @media only screen and (max-width: $bp-small){
+        margin-right: 0;
+        margin-bottom: 3rem;
+     }
+
+}
+
+.user-reviews {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
